@@ -1,42 +1,40 @@
 package pom;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.bidi.log.Log;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
-
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.page;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
-    private final String baseUrl = "https://www.saucedemo.com/";
+    private WebDriver driver;
 
-    //Xpath locators
-    @FindBy(how = How.XPATH, using = ".//input[@name = 'user-name']")
-    private SelenideElement usernameField;
-    @FindBy(how = How.XPATH, using = ".//input[@name = 'password']")
-    private SelenideElement passwordField;
-    @FindBy(how = How.XPATH, using = ".//input[@name = 'login-button']")
-    private SelenideElement loginButton;
+    //Locators
+    private By usernameField = By.xpath(".//input[@name = 'user-name']");
+
+    private By passwordField = By.xpath(".//input[@name = 'password']");
+
+    private By loginButton = By.xpath(".//input[@name = 'login-button']");
+
+    //Constructor
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+    }
 
     //Method set Username
-    public void setUsername (String username){
-        usernameField.setValue(username);
-    }
-    //Method set Password
-    public void setPassword (String password){
-        passwordField.setValue(password);
-    }
-    //Method click login Button
-    public void clickLoginButton(){
-        loginButton.click();
+    public void setUsername(String username) {
+        driver.findElement(usernameField).sendKeys(username);
     }
 
-    //Method authorization
-    public void login (String username, String password){
+    //Method set Password
+    public void setPassword(String password) {
+        driver.findElement(passwordField).sendKeys(password);
+    }
+
+    //Method click login Button
+    public void clickLoginButton() {
+        driver.findElement(loginButton).click();
+    }
+
+    //Method login
+    public void login(String username, String password) {
         setUsername(username);
         setPassword(password);
         clickLoginButton();
