@@ -6,6 +6,7 @@ import org.junit.runners.Parameterized;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+//import pom.HomePage;
 import pom.LoginPage;
 
 import static org.junit.Assert.assertEquals;
@@ -14,6 +15,7 @@ import static org.junit.Assert.assertEquals;
 public class LoginPageTest {
     WebDriver driver = new ChromeDriver();
     LoginPage loginPage = new LoginPage(driver);
+    //HomePage homePage = new HomePage(driver);
     private final String username;
     private final String password;
     private final boolean result;
@@ -46,6 +48,7 @@ public class LoginPageTest {
     @Test
     public void loginTest() {
         loginPage.login(username, password);
+        //homePage.waitForLoadPage();
         assertEquals(result, driver.findElement(By.xpath(".//div[@class = 'app_logo']")).isDisplayed());
     }
 
