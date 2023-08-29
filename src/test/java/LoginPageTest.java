@@ -5,15 +5,18 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 //import pom.HomePage;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import pom.LoginPage;
 
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class LoginPageTest {
-    WebDriver driver = new ChromeDriver();
+//    WebDriver driver = new ChromeDriver();
+    WebDriver driver = new FirefoxDriver();
     LoginPage loginPage = new LoginPage(driver);
     //HomePage homePage = new HomePage(driver);
     private final String username;
