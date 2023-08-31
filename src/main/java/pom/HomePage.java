@@ -37,7 +37,6 @@ public class HomePage {
     }
 
     //Methods
-
     public void addItemToCard (String item) {
         driver.findElement(addButton0).click();
     }
