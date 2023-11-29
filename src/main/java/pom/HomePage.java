@@ -43,4 +43,5 @@ public class HomePage {
     public void addItemToCard (String addItem) {
         driver.findElement(addButton0).click();
     }
+
 }
