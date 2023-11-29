@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.security.PrivateKey;
 import java.time.Duration;
 
 public class HomePage {
@@ -33,11 +34,13 @@ public class HomePage {
         this.driver = driver;
     }
 
-    public void clickOnItem() {
+    public void clickOnItem(String item) {
+        driver.findElement(item0).click();
     }
 
+
     //Methods
-    public void addItemToCard (String item) {
+    public void addItemToCard (String addItem) {
         driver.findElement(addButton0).click();
     }
 }
