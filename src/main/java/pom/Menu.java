@@ -15,4 +15,20 @@ public class Menu {
   this.driver = driver;
  }
 
+ public void clickOnCloseMenuButton() {
+  driver.findElement(closeMenuButton).click();
+ }
+ public void clickOnAllItemsLink() {
+  driver.findElement(allItemsLink).click();
+ }
+ public void clickOnAboutLink() {
+  driver.findElement(aboutLink).click();
+ }
+ public void clickOnLogOutLink() {
+  driver.findElement(logOutLink).click();
+ }
+ public void clickOnResetAppLink() {
+  driver.findElement(resetAppLink).click();
+ }
+
 }
