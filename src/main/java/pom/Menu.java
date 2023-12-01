@@ -11,4 +11,8 @@ public class Menu {
  private By logOutLink = By.xpath("//a[@id = 'logout_sidebar_link']");
  private By resetAppLink = By.xpath("//a[@id = 'reset_sidebar_link']");
 
+ public Menu(WebDriver driver) {
+  this.driver = driver;
+ }
+
 }

@@ -10,4 +10,7 @@ public class CartPage {
     private By continueShoppingButton = By.xpath("//button[@id = 'continue-shopping']");
     private By openBurgerMenuButton = By.xpath("//button[@id = 'react-burger-menu-btn']");
 
+    public CartPage(WebDriver driver) {
+        this.driver = driver;
+    }
 }
