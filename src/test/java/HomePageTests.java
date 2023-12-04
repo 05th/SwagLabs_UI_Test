@@ -6,9 +6,6 @@ import pom.HomePage;
 public class HomePageTests {
 
     WebDriver driver = new ChromeDriver();
-
     HomePage homePage = new HomePage(driver);
-
-    @Test
 
 }
