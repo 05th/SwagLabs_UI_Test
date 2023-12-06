@@ -34,6 +34,10 @@ public class HomePage {
         this.driver = driver;
     }
 
+    public String getTextLogoApp() {
+        return driver.findElement(logoApp).getText();
+    }
+
     public void clickOnItem(String item) {
         driver.findElement(item0).click();
     }
