@@ -11,8 +11,8 @@ import pom.LoginPage;
 import static org.hamcrest.CoreMatchers.is;
 public class HomePageTests {
 
-    //WebDriver driver = new ChromeDriver();
-    WebDriver driver = new FirefoxDriver();
+    WebDriver driver = new ChromeDriver();
+    //WebDriver driver = new FirefoxDriver();
     HomePage homePage = new HomePage(driver);
     LoginPage loginPage = new LoginPage(driver);
     private String username;
@@ -21,6 +21,7 @@ public class HomePageTests {
     @Before
     public void setUp() {
         driver.get("https://www.saucedemo.com/");
+        loginPage.login("standard_user", "secret_sauce");
     }
 
     @Test
