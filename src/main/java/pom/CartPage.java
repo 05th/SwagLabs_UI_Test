@@ -13,4 +13,5 @@ public class CartPage {
     public CartPage(WebDriver driver) {
         this.driver = driver;
     }
+
 }

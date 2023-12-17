@@ -38,13 +38,13 @@ public class HomePage {
         return driver.findElement(logoApp).getText();
     }
 
-    public void clickOnItem(String item) {
+    public void clickOnItem() {
         driver.findElement(item0).click();
     }
 
 
     //Methods
-    public void addItemToCard (String addItem) {
+    public void addItemToCard () {
         driver.findElement(addButton0).click();
     }
 

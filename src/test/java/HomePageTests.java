@@ -1,10 +1,14 @@
 import org.hamcrest.MatcherAssert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.DisplayName;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import pom.CartPage;
 import pom.HomePage;
 import pom.LoginPage;
 
@@ -15,6 +19,7 @@ public class HomePageTests {
     //WebDriver driver = new FirefoxDriver();
     HomePage homePage = new HomePage(driver);
     LoginPage loginPage = new LoginPage(driver);
+    CartPage cartPage = new CartPage(driver);
     private String username;
     private String password;
 
@@ -31,6 +36,15 @@ public class HomePageTests {
         String expectedResult = "Swag Labs";
         MatcherAssert.assertThat(actualResult, is(expectedResult));
     }
+    @Test
+    @DisplayName("Check the Item can be added in cart")
+    public void checkTheItemAddedInCart() {
+        homePage.clickOnItem();
 
 
+    }
+    @After
+    public void tearDown() {
+        driver.quit();
+    }
 }
